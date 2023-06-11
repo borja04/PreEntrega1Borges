@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//impotar librferias
+import React from "react";
+import ReactDOM from "react-dom/client";
+import NavBar from "./NavBar";
+import ItemListContainer from "./ItemListContainer";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+//referencia al div con id root
+const  el = document.getElementById("root");
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//react toma control del elemento
+const root = ReactDOM.createRoot(el);
+
+function App() {
+    return (
+        <div className="App">
+        <NavBar />  
+        <ItemListContainer  greeting={"Bienvenidos"}/>  
+        </div>
+    )
+};
+
+
+//mostrar contenido en la pantalla
+root.render(<App/>)
+
